@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotation of strings</title>
+  </head>
+  <body>
+    <script>
+      function checkString(s1, s2, indexFound, Size) {
+        for (let i = 0; i < Size; i++) {
+          if (s1[i] != s2[(indexFound + i) % Size]) return false;
+        }
+
+        return true;
+      }
+
+      let s1 = "hello";
+      let s2 = "hello";
+
+      if (s1.length != s2.length) {
+        document.write("s2 is not a rotation on s1");
+      } else {
+        let indexes = [];
+        let Size = s1.length;
+        let firstChar = s1[0];
+        for (let i = 0; i < Size; i++) {
+          if (s2[i] == firstChar) {
+            indexes.push(i);
+          }
+        }
+
+        let isRotation = false;
+
+        for (let idx of indexes) {
+          isRotation = checkString(s1, s2, idx, Size);
+
+          if (isRotation) break;
+        }
+
+        if (isRotation) document.write("s2 is rotation of s1");
+        else document.write("s2 is not a rotation of s1");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse an array</title>
+  </head>
+  <body>
+    <script>
+      let original_array = [1, 2, 3, 4, 5, 6];
+
+      let reversed_array = [];
+
+      document.write("Original Array: ");
+      document.write(original_array);
+    
+      original_array.forEach((element) => {
+        reversed_array.unshift(element);
+      });
+      
+      document.write(" Reversed Array: ");
+      document.write(reversed_array);
+    </script>
+  </body>
+</html>

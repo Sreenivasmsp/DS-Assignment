@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tower of Hanoi</title>
+  </head>
+  <body>
+    <script>
+      function towerOfHanoi(n, from_rod, to_rod, aux_rod) {
+        if (n == 0) {
+          return;
+        }
+        towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
+        document.write(
+          "Move disk " +
+            n +
+            " from rod " +
+            from_rod +
+            " to rod " +
+            to_rod +
+            "<br/>"
+        );
+        towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
+      }
+
+      var N = 3;
+
+      towerOfHanoi(N, "A", "C", "B");
+    </script>
+  </body>
+</html>
